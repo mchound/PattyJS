@@ -28,18 +28,18 @@
     /* ------------------------------------------------------------------------------------- */
     /* -------------------------------- Element.remove ------------------------------------- */
     /* ------------------------------------------------------------------------------------- */
-    if (Element.prototype.remove){
+    ;if (Element.prototype.remove){
         Element.prototype.remove = function(){
 
             !!this.parentNode ? this.parentNode.removeChild(this) : null;
 
         };
-    }
+    };
 
     /* ------------------------------------------------------------------------------------- */
     /* -------------------------------- Element.prependChild ------------------------------------- */
     /* ------------------------------------------------------------------------------------- */
-    if (!Element.prototype.prependChild){
+    ;if (!Element.prototype.prependChild){
         Element.prototype.prependChild = function(el){
 
             for(var i = 0; i < this.children.length; i++){
@@ -50,12 +50,12 @@
             }
 
         };
-    }
+    };
 
     /* ------------------------------------------------------------------------------------- */
     /* -------------------------------- Array.indexOf -------------------------------------- */
     /* ------------------------------------------------------------------------------------- */
-    if (!Array.prototype.indexOf) {
+    ;if (!Array.prototype.indexOf) {
         Array.prototype.indexOf = function (elt /*, from*/) {
             var len = this.length >>> 0;
             var from = Number(arguments[1]) || 0;
@@ -77,7 +77,7 @@
     /* ------------------------------------------------------------------------------------- */
     /* -------------------------------- Array.exist ---------------------------------------- */
     /* ------------------------------------------------------------------------------------- */
-    if (!Array.prototype.exists) {
+    ;if (!Array.prototype.exists) {
         Array.prototype.exist = function (obj) {
             for(var i = 0; i < this.length; i++) if(this[i] === obj) return true;
             return false;
@@ -87,7 +87,7 @@
     /* ------------------------------------------------------------------------------------- */
     /* -------------------------------- Array.forEach -------------------------------------- */
     /* ------------------------------------------------------------------------------------- */
-    if (!Array.prototype.forEach) {
+    ;if (!Array.prototype.forEach) {
         Array.prototype.forEach = function (callback) {
             for(var i = 0; i < this.length; i++) callback.call(window, this[i], i, this);
         };
@@ -96,7 +96,7 @@
     /* ------------------------------------------------------------------------------------- */
     /* -------------------------------- Array.map ------------------------------------------ */
     /* ------------------------------------------------------------------------------------- */
-    if (!Array.prototype.map) {
+    ;if (!Array.prototype.map) {
         Array.prototype.map = function (callback) {
             var arr = [];
             for(var i = 0; i < this.length; i++) arr.push(callback.call(window, this[i], i, this));
@@ -107,7 +107,7 @@
     /* ------------------------------------------------------------------------------------- */
     /* -------------------------------- Array.remove --------------------------------------- */
     /* ------------------------------------------------------------------------------------- */
-    if (!Array.prototype.remove) {
+    ;if (!Array.prototype.remove) {
         Array.prototype.remove = function (callback) {
             var arr = []
             for(var i = 0; i < this.length; i++) {
@@ -120,7 +120,7 @@
     /* ------------------------------------------------------------------------------------- */
     /* -------------------------------- String.trim ---------------------------------------- */
     /* ------------------------------------------------------------------------------------- */
-    if (!String.prototype.trim) {
+    ;if (!String.prototype.trim) {
         String.prototype.trim = function () {
             return this.replace(/^\s+|\s+$/g, '');
         };
@@ -129,7 +129,7 @@
     /* ------------------------------------------------------------------------------------- */
     /* -------------------------------- String.format -------------------------------------- */
     /* ------------------------------------------------------------------------------------- */
-    if (!String.prototype.format) {
+    ;if (!String.prototype.format) {
         String.prototype.format = function () {
             var s = this;
             for(var i = 0; i < arguments.length; i++){
@@ -142,7 +142,7 @@
     /* ------------------------------------------------------------------------------------- */
     /* -------------------------------- String.startsWith ---------------------------------- */
     /* ------------------------------------------------------------------------------------- */
-    if (!String.prototype.startsWith) {
+    ;if (!String.prototype.startsWith) {
       Object.defineProperty(String.prototype, 'startsWith', {
         enumerable: false,
         configurable: false,
@@ -152,12 +152,12 @@
           return this.lastIndexOf(searchString, position) === position;
         }
       });
-    }
+    };
 
     /* ------------------------------------------------------------------------------------- */
     /* -------------------------------- Math.toRad ----------------------------------------- */
     /* ------------------------------------------------------------------------------------- */
-    if(!Number.prototype.toRad){
+    ;if(!Number.prototype.toRad){
         Number.prototype.toRad = function(degrees){
             return degrees * Math.PI / 180;
         }
@@ -166,7 +166,7 @@
     /* ------------------------------------------------------------------------------------- */
     /* -------------------------------- HTMLCollection.toArray ----------------------------- */
     /* ------------------------------------------------------------------------------------- */
-    if(!HTMLCollection.prototype.toArray){
+    ;if(!HTMLCollection.prototype.toArray){
         HTMLCollection.prototype.toArray = function(){
             return Array.prototype.slice.apply(this);
         };
@@ -175,7 +175,7 @@
     /* ------------------------------------------------------------------------------------- */
     /* -------------------------------- NamedNodeMap.toArray ----------------------------- */
     /* ------------------------------------------------------------------------------------- */
-    if(!NamedNodeMap.prototype.toArray){
+    ;if(!NamedNodeMap.prototype.toArray){
         NamedNodeMap.prototype.toArray = function(){
             return Array.prototype.slice.apply(this);
         };
