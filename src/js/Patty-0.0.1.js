@@ -28,7 +28,7 @@
     /* ------------------------------------------------------------------------------------- */
     /* -------------------------------- Element.remove ------------------------------------- */
     /* ------------------------------------------------------------------------------------- */
-    ;if (Element.prototype.remove){
+    ;if (!Element.prototype.remove){
         Element.prototype.remove = function(){
 
             !!this.parentNode ? this.parentNode.removeChild(this) : null;
